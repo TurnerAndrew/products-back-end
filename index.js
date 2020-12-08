@@ -9,10 +9,10 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env;
 app.use(express.json());
 
 app.get("/api/products", prodCtrl.getAll);
-app.get("/api/products/:id", prodCtrl.getOne);
-app.put("/api/products/:id", prodCtrl.update);
+app.get("/api/products/:product_id", prodCtrl.getOne);
+app.put("/api/products/:product_id", prodCtrl.update);
 app.post("/api/products", prodCtrl.create);
-app.delete("/api/products/:id", prodCtrl.delete);
+app.delete("/api/products/:product_id", prodCtrl.delete);
 
 massive({
   connectionString: CONNECTION_STRING,
